@@ -14,7 +14,7 @@
 		5D682E82251AE18700FF1A1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D682E81251AE18700FF1A1F /* Assets.xcassets */; };
 		5D682E85251AE18700FF1A1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D682E83251AE18700FF1A1F /* LaunchScreen.storyboard */; };
 		5D6E110C251BAA750024975E /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E110B251BAA750024975E /* ChecklistItem.swift */; };
-		5D6E110E251C1F390024975E /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E110D251C1F390024975E /* AddItemViewController.swift */; };
+		5D6E110E251C1F390024975E /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E110D251C1F390024975E /* ItemDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		5D682E84251AE18700FF1A1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D682E86251AE18700FF1A1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D6E110B251BAA750024975E /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
-		5D6E110D251C1F390024975E /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		5D6E110D251C1F390024975E /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 		5D682E77251AE18600FF1A1F /* Checklists */ = {
 			isa = PBXGroup;
 			children = (
-				5D6E110D251C1F390024975E /* AddItemViewController.swift */,
+				5D6E110D251C1F390024975E /* ItemDetailViewController.swift */,
 				5D682E78251AE18600FF1A1F /* AppDelegate.swift */,
 				5D682E81251AE18700FF1A1F /* Assets.xcassets */,
 				5D6E110B251BAA750024975E /* ChecklistItem.swift */,
@@ -144,7 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D6E110E251C1F390024975E /* AddItemViewController.swift in Sources */,
+				5D6E110E251C1F390024975E /* ItemDetailViewController.swift in Sources */,
 				5D682E7D251AE18600FF1A1F /* ChecklistViewController.swift in Sources */,
 				5D682E79251AE18600FF1A1F /* AppDelegate.swift in Sources */,
 				5D682E7B251AE18600FF1A1F /* SceneDelegate.swift in Sources */,

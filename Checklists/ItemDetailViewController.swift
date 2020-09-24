@@ -9,16 +9,16 @@
 import UIKit
 
 protocol AddItemViewControllerDelegate: class {
-    func addItemViewControllerDidCancel(controller: ItemDetailViewControllerler)
+    func itemDetailViewControllerDidCancel(controller: ItemDetailViewController)
     
-    func addItemViewController(controller: ItemDetailViewControllerler,
+    func itemDetailViewController(controller: ItemDetailViewController,
                                didFinishAdding item: ChecklistItem)
-    func addItemViewController(controller: ItemDetailViewControllerler,
+    func itemDetailViewController(controller: ItemDetailViewController,
                                didFinishEditing item: ChecklistItem)
 }
 
 
-class ItemDetailViewControllerler: UITableViewController, UITextFieldDelegate {
+class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
 
     
     @IBOutlet weak var textField: UITextField!
@@ -48,7 +48,7 @@ class ItemDetailViewControllerler: UITableViewController, UITextFieldDelegate {
     
     @IBAction func cancel() {
         //Had to add controller per error message.
-        delegate?.addItemViewControllerDidCancel(controller: self)
+        delegate?.itemDetailViewControllerDidCancel(controller: self)
         
     }
     
@@ -56,12 +56,12 @@ class ItemDetailViewControllerler: UITableViewController, UITextFieldDelegate {
         if let item = itemToEdit {
             item.text = textField.text!
             //Had to add controller per error message.
-            delegate?.addItemViewController(controller: self, didFinishEditing: item)
+            delegate?.itemDetailViewController(controller: self, didFinishEditing: item)
         } else {
             let item = ChecklistItem()
             item.text = textField.text!
             //Had to add controller per error message.
-            delegate?.addItemViewController(controller: self, didFinishAdding: item)
+            delegate?.itemDetailViewController(controller: self, didFinishAdding: item)
         
             print("Contents of the text field: \(textField.text!)")
         }
