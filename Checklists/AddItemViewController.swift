@@ -8,8 +8,21 @@
 
 import UIKit
 
+protocol AddItemViewControllerDelegate: class {
+    func addItemViewControllerDidCancel(controller: AddItemViewController)
+    
+    func addItemViewController(controller: AddItemViewController,
+                               didFinishAdding item: ChecklistItem)
+}
+
 class AddItemViewController: UITableViewController, UITextFieldDelegate {
 
+    
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var doneBarButton: UIBarButtonItem!
+    
+    weak var delegate: AddItemViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,19 +35,22 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
         textField.becomeFirstResponder()
     }
     
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var doneBarButton: UIBarButtonItem!
-    
     // MARK:- Actions
     
     @IBAction func cancel() {
-        navigationController?.popViewController(animated: true)
+        //Had to add controller per error message.
+        delegate?.addItemViewControllerDidCancel(controller: self)
+        
     }
     
     @IBAction func done() {
+        let item = ChecklistItem()
+        item.text = textField.text!
+        //Had to add controller per error message.
+        delegate?.addItemViewController(controller: self, didFinishAdding: item)
         
         print("Contents of the text field: \(textField.text!)")
-        navigationController?.popViewController(animated: true)
+
     }
     
     // MARK:- Table View Delegates

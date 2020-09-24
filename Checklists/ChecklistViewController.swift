@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChecklistViewController: UITableViewController {
+class ChecklistViewController: UITableViewController, AddItemViewControllerDelegate {
     
     var items = [ChecklistItem]()
 
@@ -38,20 +38,35 @@ items.append(item5)
         
 
 }
-// MARK:- Action
-    @IBAction func addItem() {
+    // MARK:- AddItemViewController Delegates
+     func addItemViewControllerDidCancel(controller: AddItemViewController) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func addItemViewController(controller: AddItemViewController,
+                               didFinishAdding item: ChecklistItem) {
+        
         let newRowIndex = items.count
-        let item = ChecklistItem()
-        item.text = "I am a new row"
-        item.checked = true
         items.append(item)
         
-        let indexPath = IndexPath(row: newRowIndex, section: 0)
+        let indexPath = IndexPath(row: newRowIndex,
+                                  section: 0)
         let indexPaths = [indexPath]
-        tableView.insertRows(at: indexPaths, with: .automatic)
+        tableView.insertRows(at: indexPaths,
+                             with: .automatic)
+        navigationController?.popViewController(animated: true)
     }
-
-// MARK:- Table View Data Source
+    
+    // MARK:- Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddItem" {
+            let controller = segue.destination as! AddItemViewController
+            
+            controller.delegate = self
+        }
+    }
+    
+    // MARK:- Table View Data Source
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
         return items.count
@@ -80,7 +95,7 @@ items.append(item5)
         }
     }
     
-    // MARK:- Table View Delegate
+    // MARK:- Table View Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let cell = tableView.cellForRow(at: indexPath) {
@@ -107,5 +122,6 @@ items.append(item5)
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
     }
+    
 }
 
