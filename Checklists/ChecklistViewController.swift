@@ -14,6 +14,8 @@ class ChecklistViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
         // Do any additional setup after loading the view.
         
         let item1 = ChecklistItem()
@@ -33,7 +35,21 @@ items.append(item4)
 let item5 = ChecklistItem()
 item5.text = "Eat ice cream"
 items.append(item5)
+        
+
 }
+// MARK:- Action
+    @IBAction func addItem() {
+        let newRowIndex = items.count
+        let item = ChecklistItem()
+        item.text = "I am a new row"
+        item.checked = true
+        items.append(item)
+        
+        let indexPath = IndexPath(row: newRowIndex, section: 0)
+        let indexPaths = [indexPath]
+        tableView.insertRows(at: indexPaths, with: .automatic)
+    }
 
 // MARK:- Table View Data Source
     override func tableView(_ tableView: UITableView,
@@ -48,9 +64,6 @@ items.append(item5)
         
         let item = items[indexPath.row]
         
-        //let label = cell.viewWithTag(1000) as! UILabel
-        
-        // label.text = item.text
         configureText(for: cell, with: item)
         configureCheckmark(for: cell, with: item)
         
@@ -83,6 +96,16 @@ items.append(item5)
                        with item: ChecklistItem) {
         let label = cell.viewWithTag(1000) as! UILabel
         label.text = item.text
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCell.EditingStyle,
+                            forRowAt indexPath: IndexPath) {
+        
+        items.remove(at: indexPath.row)
+        
+        let indexPaths = [indexPath]
+        tableView.deleteRows(at: indexPaths, with: .automatic)
     }
 }
 
