@@ -10,14 +10,37 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    let dataModel = DataModel()
+    var window: UIWindow?
 
+    /*func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
+      [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+      let navigationController = window!.rootViewController as! UINavigationController
+      let controller = navigationController.viewControllers[0] as! AllListsViewController
+      controller.dataModel = dataModel
+      return true
+    }*/
 
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
 
+    func applicationDidEnterBackground(_ application: UIApplication) {
+       //saveData()
+     }
+
+    func applicationWillTerminate(_ application: UIApplication) {
+      //saveData()
+    }
+
+    // MARK:- Helper Methods
+    /*func saveData() {
+      dataModel.saveChecklists()
+    }*/
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

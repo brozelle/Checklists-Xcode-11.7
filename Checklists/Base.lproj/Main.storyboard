@@ -79,7 +79,7 @@
                                 <action selector="cancel" destination="jHA-4E-7PJ" id="zyY-3G-X22"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="sv4-ft-KV6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="sv4-ft-KV6">
                             <connections>
                                 <action selector="done" destination="jHA-4E-7PJ" id="LCi-qH-pfX"/>
                             </connections>
@@ -104,10 +104,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ChecklistItem" id="ru3-jP-5jc">
-                                <rect key="frame" x="0.0" y="28" width="414" height="35"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="35.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ru3-jP-5jc" id="Qfu-c2-Iti">
-                                    <rect key="frame" x="0.0" y="0.0" width="351" height="35"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="351" height="35.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktq-iO-Bk8">
@@ -117,7 +117,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="√" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLO-48-YNS">
-                                            <rect key="frame" x="20" y="4" width="13" height="27"/>
+                                            <rect key="frame" x="20" y="4" width="13" height="27.5"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

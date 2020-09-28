@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 protocol ListDetailViewControllerDelegate: class {
+    
     func listDetailViewControllerDidCancel(_ controller: ListDetailViewController)
     func listDetailViewController(_ controller: ListDetailViewController,
                                   didFinishAdding checklist: Checklist)
@@ -31,8 +32,14 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate {
             title = "Edit Checklist"
             textField.text = checklist.name
             doneBarButton.isEnabled = true
-            
+
         }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        textField.becomeFirstResponder()
         
     }
     
